@@ -1,0 +1,23 @@
+/* 
+    En CSS Grid podemos ordenar los grid items usando la propiedad order;
+    Por defecto los grid items tienen la propiedad order establecida en 0
+*/
+
+.grid-container {
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.grid-item {
+    order: 1;
+}
+
+.grid-item:nth-child(2) {
+    background-color: darkgoldenrod;
+    order: 5;
+}
+
+.grid-item:nth-child(3) {
+    background-color: cadetblue;
+    order: 0;
+}

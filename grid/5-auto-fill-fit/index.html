@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid - auto-fill / auto-fit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: darkgray;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 0.1px;
+        }
+
+        .auto-fill {
+            margin: 30px auto;
+            width: 90%;
+            height: 80vh;
+            box-shadow: 0 0 2px 0 black;
+        }
+
+        .auto-fit {
+            margin: 30px auto;
+            width: 90%;
+            height: 80vh;
+            box-shadow: 0 0 2px 0 black;
+        }
+
+        .grid-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: chocolate;
+            box-shadow: 0 0 2px 0 black;
+            font-size: 38px;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- <section class="auto-fill">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+    </section> -->
+
+    <section class="auto-fit">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+    </section>
+</body>
+</html>

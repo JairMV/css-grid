@@ -1,0 +1,33 @@
+/* 
+    En CSS Grid podemos alinear horizontal y verticalmente los grid items con respecto a su celda usando las propiedades: 
+    
+    justify-items; --- Nos permite alinear de forma horizontal, por defecto tiene el valor valor stretch, lo cual hace que se estire horizontalmente el elemento.
+
+    align-items;   --- Nos permite alinear de forma vertical, por defecto tiene el valor valor stretch, lo cual hace que se estire horizontalmente el elemento.
+
+    Cuando le asignamos otro valor como start, end, etc, se redimenciona el tamaño del elemento ocupando solo el espacio que necesita.
+
+    También podemos alinear los elementos individualmente con las propiedades:
+
+    justify-self; --- Para alinear horizontalmente
+
+    align-self;   --- Para alinear verticalmente
+*/
+
+.grid-container {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:    repeat(3, 200px);
+
+    justify-items: start;
+
+    align-items: center;
+}
+
+.grid-item:nth-child(5) {
+    background-color: darkseagreen;
+
+    justify-self: center;
+    align-self: center;
+}

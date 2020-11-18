@@ -1,0 +1,20 @@
+/* 
+    En CSS Grid podemos hacer que se generen automaticamente las columnas o filas, para hacerlo tenemos 2 valores distintos que van en la función repeat():
+
+    auto-fill - Genera tantas columnas/filas como quepan en la rejilla.
+
+    auto-fit  - A diferencia de auto-fill, auto-fit no genera columnas/filas extras, generara las columnas/filas necesarias para la cantidad de grid items que tengamos, siempre que haya espacio para poder crearlas. Si tengo 6 grid-items generara 6 columnas
+    Es útil cuando tenemos pocos grid-items
+*/
+
+/*
+.auto-fill {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+}
+*/
+
+.auto-fit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}

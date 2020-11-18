@@ -1,0 +1,86 @@
+* {
+    margin:              0;
+    padding:             0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: darkgray;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0.1px;
+}
+
+.grid-container {
+    width: 400px;
+    margin: 30px auto;
+    font-size: 30px;
+    box-shadow: 0 0 2px 0 black;
+}
+
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: chocolate;
+    box-shadow: 0 0 2px 0 black;
+}
+
+/*
+    Trabajando con grid lines
+*/ 
+
+.grid-item:first-child {
+    background-color: cornflowerblue;
+}
+
+.grid-item:nth-child(2) {
+    background-color: cornflowerblue;
+}
+
+.grid-item:nth-child(3) {
+    background-color: orangered;
+}
+
+.grid-item:nth-child(4) {
+    background-color: orangered;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 
+        [first-column-line]  1fr 
+        [second-column-line] 1fr 
+        [third-column-line]  1fr 
+        [fourth-column-line] 1fr
+        [last-column-line];
+    grid-template-rows:    
+        [first-row-line]  100px 
+        [second-row-line] 100px 
+        [third-row-line]  100px 
+        [fourth-row-line] 100px
+        [last-row-line];
+}
+
+.grid-item:first-child {
+    grid-column-start: second-column-line;
+    grid-column-end:    third-column-line;
+    
+    grid-row-start:  first-row-line;
+    grid-row-end:   second-row-line;
+}
+
+.grid-item:nth-child(2) {
+    grid-column-start: first-column-line;
+    grid-column-end:   third-column-line;
+
+    grid-row-start: second-row-line;
+    grid-row-end:   fourth-row-line;
+}
+
+.grid-item:nth-child(3) {
+    grid-column-start: third-column-line;
+    grid-column-end:  fourth-column-line;
+
+    grid-row-start: first-row-line;
+    grid-row-end:   third-row-line;
+}

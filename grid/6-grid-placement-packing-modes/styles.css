@@ -1,0 +1,50 @@
+/* 
+    CSS Grid acomoda los grid-items en la grilla que declaramos usando las porpiedades grid-template-columns; y grid-template-rows;, a esta grilla la llamaremos explicit-grid, sin embargo, cuando tenemos muchos grid-items y ya no caben el nuestra explicit grid, CSS Grid generara columnas y filas automaticamente, siendo mas precisos, generara otra grilla, a la cual conoceremos como implicit-grid. Por defecto tienen un tamaño establecido en -auto- lo cual hace que el tamaño de las columnas y filas rows    adapte al tamaño del contenido.
+    Podemos decidir cual sera el tamaño de esas columnas/filas con las propiedades:
+
+    grid-auto-columns;
+    grid-auto-rows;
+
+    Ejemplo:
+
+    grid-auto-columns: repeat(minmax(150px, 1fr));
+    grid-auto-rows:    repeat(minmax(150px, 1fr));
+
+    CSS Grid por defecto acomoda los elementos por filas, de izquierda a derecha y cuando cuando ya no caben los desborda a la siguiente fila y asi sucesivamente.
+    Podemos cambiar este flujo usando la propiedad:
+
+    grid-auto-flow;
+
+    Esta propiedad puede recibir los siguientes valores:
+
+    column / row / column-reverse / row-reverse
+
+    En ocasiones, cuando CSS Grid termina de posicionar los grid-items, pueden quedar espacios en blanco entre los grid-items, podemos hacer que se llenen esos espacios/huecos añadiendo un segundo valor a la propiedad grid-auto-flow; dicho valor es -dense-
+
+    Ejemplo:
+
+    grid-auto-flow: row dense;
+*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-rows:    repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-flow: column dense;
+    grid-auto-columns: minmax(150px, 1fr);
+    grid-auto-rows:    minmax(150px, 1fr);
+}
+
+.grid-item:nth-child(3n) {
+    background-color: purple;
+    grid-column-start: span 2;
+}
+
+.grid-item:nth-child(6n) {
+    background-color: aqua;
+    grid-column-end: span 3;
+}
+
+.grid-item:nth-child(7n) {
+    grid-row-end: span 2;
+}

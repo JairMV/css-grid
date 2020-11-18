@@ -1,0 +1,82 @@
+/* 
+    Para empezar a usar Grid debemos darle a la propiedad display el valor de grid.
+
+    Para definir el número de columnas y filas que queremos usamos las propiedades
+
+    grid-template-columns;
+    grid-template-rows;
+
+    Estas propiedades recibiran como valor las medidas que queremos ocupen las columnas y filas.
+    También pueden recibir como valor la unidad fr, la cual divide el espacio en fracciones.
+    *Cuando los valores de grid-template-colums/rows son repetidos muchas veces, podemos usar la funcion repeat() para ahorrarnos tiempo, ejemplo:
+
+    grid-template-columns: 100px 100px 100px 100px;
+
+    a
+
+    grid-template-columns: repeat(4, 100px);
+
+    Podemos dar un espaciado entre columnas y filas usando las propiedades...
+
+    column-gap; para las columnas
+    row-gap;    para las filas
+
+    o el shorthand --- gap: row / columns;
+*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows:    100px 100px 100px;
+    gap: 10px;
+    width: 320px;
+}
+
+/* 
+    En CSS Grid podemos definir donde empieza y termina un grid-item usando las grid-lines cons las propiedades:
+
+    grid-column-start;
+    grid-column-end;
+    
+    grid-row-start;
+    grid-row-end;
+
+    o usando los shorthands
+
+    grid-column: start / end;
+    grid-row:    start / end;
+
+    Estas proiedades reciben como valor el número que indica la posicion de las gridlines que usaremos aunque tambien puede recibir como valor --- span n ---.
+    Cabe resaltar que - span - solo le dice al grid-item cuantas columnas o filas ocupar mas no donde empezar o terminar.
+
+
+
+
+    Otra consideracion a tener en cuenta al usar las propiedades anteriormente mencionadas es la forma en la que CSS Grid posiciona los grid-item (flujo).
+
+    CSS Grid posicionara los grid-items empezando por el que primero aparezca en el HTML, luego posicionara al segundo que aparezca en el HTML y así sucesivamente.
+
+    Cuando usemos la propiedad grid-row-start o grid-row-end CSS Grid les dara prioridad de posicionamiento es decir, los posicionara primero y despues posicionara a los demas grid-items.
+
+    Cuando usemos la propiedad grid-column-start o grid-column-end CSS Grid no les dara prioridad de posicionamiento pero cuando llegue su turno de ser posicionados hara que salten a las column lines (columnas) espeficificadas, pudiendo dejar espacios en blanco en algunos casos.
+
+    *Con el valor span no le da prioridad de posicionamiento.
+*/
+
+.grid-item:nth-child(6) {
+    background-color: cadetblue;
+    /* grid-row-start: span 2; */
+}
+
+/* 
+    Cuando el no caben todos los grid-items dentro del grid definido (explicit grid) CSS Grid generara filas o columas automaticamente (implicit grid).
+    
+    Podemos definir el tamño de esas filas o columnas implicitas con las propiedades:
+
+    grid-auto-columns;
+    grid-auto-rows;
+*/
+
+.grid-container {
+    grid-auto-rows: 100px;
+}

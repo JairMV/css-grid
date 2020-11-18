@@ -1,0 +1,21 @@
+/* 
+    En CSS Grid podemos alinear horizontal y verticalmente las grid tracks usando las propiedades:
+
+    justify-content; --- Para alinear horizontalmente
+
+    align-content;   --- Para alinear verticalmente
+
+    Pueden recibir algunos valores de flexbox como:
+    stretch / space-between / space-evenly / space-around
+*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows:    repeat(3, 150px);
+    height: 600px;
+    row-gap: 30px;
+
+    justify-content: space-evenly;
+    align-content:   center;
+}

@@ -1,0 +1,24 @@
+/* 
+    En CSS Grid podemos asignarle nombre a las diferentes areas del grid-container, lo cual hace mas fácil guiarnos en el.
+    Para asignar dichos nombres debemos usar la propiedad:
+
+    grid-template-areas;
+*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows:    2fr 5fr 1fr;
+
+    grid-template-areas: "header  header  header"
+                         "aside-1 content aside-2"
+                         "footer  footer  footer";
+}
+
+header {
+    grid-area: header;
+}
+
+footer {
+    grid-area: footer;
+}

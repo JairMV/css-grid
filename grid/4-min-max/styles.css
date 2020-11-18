@@ -1,0 +1,24 @@
+/*
+    En CSS Grid podemos establecer limites a las columnas con la funcion minmax()
+    Podemos usar minmax() para repetir patrones con la función repeat() y también la podemos usar en columnas individuales.
+*/
+
+.grid-container {
+    display: grid;
+
+    /* 8 columnas con un mínimo y un máximo */
+    /* grid-template-columns: repeat(8, minmax(70px, 1fr)); */
+
+    /*  2 columnas con distintos valores y que se repitan 4 veces para tener un total de 8 columnas.
+        Una columna tendra un tamaño de 80px y la otra tendra un tamaño mínimo de 100px y un máximo de 1fr
+    */
+    /* grid-template-columns: repeat(4, 80px minmax(100px, 1fr)); */
+
+    /* 
+        8 columnas que tengan un mínimo establecido por el contenido y un máximo del 30%
+    */
+    /* grid-template-columns: repeat(8, minmax(min-content, 30%)); */
+
+    /* 8 columnas que tengan un mínimo y máximo establecido por el contenido */
+    /* grid-template-columns: repeat(8, minmax(min-content, max-content)); */
+}

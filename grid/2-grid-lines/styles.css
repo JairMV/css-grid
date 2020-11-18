@@ -1,0 +1,29 @@
+/* 
+    En CSS Grid podemos dar nombres a las grid lines de la siguiente manera
+*/
+
+.grid-container {
+    display: grid;
+    gap: 10px;
+    height: 60vh;
+
+    grid-template-columns: 
+        [sidebar-start] 1fr 
+        [content-start] 2fr
+        [column-lines-end];
+
+    grid-template-rows: 
+        [header-start]  1fr
+        [content-start] 2fr
+        [footer-start]  1fr
+        [row-lines-end];
+}
+
+header {
+    grid-column-start: sidebar-start;
+    grid-column-end:   column-lines-end;
+}
+
+footer {
+    grid-column-start: span 2;
+}
