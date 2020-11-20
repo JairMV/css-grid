@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: cornsilk;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0.1px;
+}
+
+.grid-container {
+    width: 400px;
+    height: 600px;
+    margin: 20px auto;
+    box-shadow: 0 0 2px 0 black;
+}
+
+.grid-item {
+    background-color: chocolate;
+    box-shadow: 0 0 2px 0 black;
+    font-size: 35px;
+}
+
+/* Practicas con CSS Grid */
+/* 
+    El valor auto puede actuar de 2 formas distintas.
+    Cuando al establecer columnas hay presencia de unidades - fr - el valor - auto - se ajusta a su contenido.
+    Cuando al establecer columnas no hay presencia de unidades - fr - el valor - auto - ocupa todo el espacio disponible (En caso que que haya mas columnas con el valor - auto - estas se repartiran el espacio disponible equitativamente)
+
+    EL comportamiento de auto es diferente en las filas, cuando el .grid-container tiene un alto definido y las filas se crean implicitamente todas tendran el valor - auto - el cual repartira el espacio disponible de forma equitativamente. Algo importante a notar es que cuando se le agrega contenido a los elementos, el grid-container toma al espacio ocupado por el contenido de los elemtnos como no disponible, de modo que no lo tomara en cuenta a la hora de repartir el espacio entre las filas, esto hara parecer que al elemento que se le agrega contenido crece mientras que lo demas decrecen.
+*/
+
+.grid-container {
+    display: grid;
+}
